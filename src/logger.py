@@ -12,6 +12,10 @@ logging.basicConfig(
     filename=LOG_FILE_PATH,
     format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO,
-
-
+    force=True
 )
+
+if __name__=="main":
+    logging.info("Logging has started from main block")
+else:
+    logging.info("Logging has started from else block")
