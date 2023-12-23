@@ -17,5 +17,3 @@ logging.basicConfig(
 
 if __name__=="main":
     logging.info("Logging has started from main block")
-else:
-    logging.info("Logging has started from else block")
