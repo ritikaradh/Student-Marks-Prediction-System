@@ -54,8 +54,22 @@ class ModelTrainer:
                 "XGBoostRegressor": XGBRegressor(),
             }
 
+            #hyperparameters of the models
+            params={
+                "DecisionTreeRegressor": {'criterion': ['squared_error','friedman_mse', 'absolute_error','poisson']},
+                "RandomForestRegressor": {'n_estimators': [8,16,32,64,128,256]},
+                "LinearRegression": {},
+                "Ridge": {},
+                "Lasso": {},
+                "AdaBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
+                "KNearestNeighborsRegressor": {'n_neighbors':[5,7,9,11]},
+                "SVMRegressor": {},
+                "CatBoostRegressor": {'depth': [6,8,10],'learning_rate':[.1,.01,.05], 'iterations':[30,50,100]},
+                "XGBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
+            }
+
             #getting a dictionary of the model names(as key) and their performance report(as value) in the training set
-            report: dict = evaluate_models(x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test, models=models)
+            report: dict = evaluate_models(x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test, models=models, hyperparameters=params)
 
             #getting best model score
             best_model_score = max(report.values())
@@ -80,7 +94,7 @@ class ModelTrainer:
                 obj= best_model
             )
 
-            return best_model_score
+            return best_model_score[0]
     
         except Exception as e:
             raise CustomException(e,sys)

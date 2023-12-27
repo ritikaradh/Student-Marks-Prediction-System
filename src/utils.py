@@ -9,6 +9,7 @@ from src.exception import CustomException
 from src.logger import logging
 
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 
 def save_object(file_path, obj):
@@ -25,29 +26,40 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e,sys)
     
-def evaluate_models(x_train,y_train, x_test, y_test, models):
+def evaluate_models(x_train,y_train, x_test, y_test, models, hyperparameters):
     '''This function evaluates x_train, y_train, x_test, y_test on various models and returns a report of the performance of the models based on r2 score metric.'''
-
+    logging.info("evaluate_models function called successfully.")
     try:
 
         report={}
 
         for i in range(len(list(models))):
+
+            parameters = hyperparameters[list(models.keys())[i]]
             model = list(models.values())[i]
 
-            model.fit(x_train, y_train) 
-            y_train_pred = model.predict(x_train)
+            gs = GridSearchCV(model, parameters,cv=3)
+            gs.fit(x_train,y_train)
+
+            model.set_params(**gs.best_params_)
+            model.fit(x_train,y_train)
+
+            #y_train_pred = model.predict(x_train)
             y_test_pred  = model.predict(x_test)
 
-            train_model_score = r2_score(y_train, y_train_pred)
+            #train_model_score = r2_score(y_train, y_train_pred)
             test_model_score = r2_score(y_test, y_test_pred)
 
-            report[list(models.keys())[i]] = test_model_score
+            report[list(models.keys())[i]] = (test_model_score, gs.best_params_)
+
+            logging.info("evaluate_models function executed successfully.")
 
         return report
     
     except Exception as e:
+        logging.info("evaluate_models function unsuccessful.")
         raise CustomException(e,sys)
+        
 
 
 
