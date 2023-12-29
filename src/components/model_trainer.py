@@ -11,8 +11,6 @@ from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR 
 
-from xgboost import XGBRegressor
-
 from sklearn.metrics import r2_score
 
 from dataclasses import dataclass
@@ -49,7 +47,6 @@ class ModelTrainer:
                 "AdaBoostRegressor": AdaBoostRegressor(),
                 "KNearestNeighborsRegressor": KNeighborsRegressor(),
                 "SVMRegressor": SVR(),
-                "XGBoostRegressor": XGBRegressor(),
             }
 
             #hyperparameters of the models
@@ -62,7 +59,6 @@ class ModelTrainer:
                 "AdaBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
                 "KNearestNeighborsRegressor": {'n_neighbors':[5,7,9,11]},
                 "SVMRegressor": {},
-                "XGBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
             }
 
             #getting a dictionary of the model names(as key) and their performance report(as value) in the training set

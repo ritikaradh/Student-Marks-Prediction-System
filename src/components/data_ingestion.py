@@ -12,6 +12,7 @@ from src.components.model_trainer import ModelTrainerConfig
 from src.components.model_trainer import ModelTrainer
 
 from sklearn.model_selection import train_test_split
+
 from dataclasses import dataclass
 
 @dataclass
