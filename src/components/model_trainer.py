@@ -11,7 +11,6 @@ from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR 
 
-from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 
 from sklearn.metrics import r2_score
@@ -50,7 +49,6 @@ class ModelTrainer:
                 "AdaBoostRegressor": AdaBoostRegressor(),
                 "KNearestNeighborsRegressor": KNeighborsRegressor(),
                 "SVMRegressor": SVR(),
-                "CatBoostRegressor": CatBoostRegressor(verbose=False),
                 "XGBoostRegressor": XGBRegressor(),
             }
 
@@ -64,7 +62,6 @@ class ModelTrainer:
                 "AdaBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
                 "KNearestNeighborsRegressor": {'n_neighbors':[5,7,9,11]},
                 "SVMRegressor": {},
-                "CatBoostRegressor": {'depth': [6,8,10],'learning_rate':[.1,.01,.05], 'iterations':[30,50,100]},
                 "XGBoostRegressor": {'learning_rate': [.1,.01,.05,.001], 'n_estimators': [8,16,32,64,128,256]},
             }
 

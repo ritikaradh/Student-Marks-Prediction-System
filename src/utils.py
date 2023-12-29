@@ -28,7 +28,9 @@ def save_object(file_path, obj):
     
 def evaluate_models(x_train,y_train, x_test, y_test, models, hyperparameters):
     '''This function evaluates x_train, y_train, x_test, y_test on various models and returns a report of the performance of the models based on r2 score metric.'''
+
     logging.info("evaluate_models function called successfully.")
+    
     try:
 
         report={}
@@ -59,7 +61,15 @@ def evaluate_models(x_train,y_train, x_test, y_test, models, hyperparameters):
     except Exception as e:
         logging.info("evaluate_models function unsuccessful.")
         raise CustomException(e,sys)
+
+
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
         
+    except Exception as e:
+        raise CustomException(e,sys)
 
 
 
