@@ -44,3 +44,5 @@ def predict_datapoint():
 
 if __name__ == "main":
     app.run(host="0.0.0.0")
+else:
+    app.run(host="0.0.0.0")
