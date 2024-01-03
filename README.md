@@ -1,5 +1,5 @@
 ## This is a Machine Learning-based Student Marks Prediction System.
-### Technologies used-
+### Technologies used are listed below(note: each step is performed using the ml pipelines)-
 #### 1. Machine Learning Approaches-
 ##### 1.1 Performed Data Ingestion
 ##### 1.2 Performed EDA
