@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Exam Score Predictor</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='About.css')}}">
+</head>
+
+<body>
+    
+
+    <div class="container mt-5">
+        <h2>About Exam Score Predictor</h2>
+        <p>Welcome to Exam Score Predictor, your go-to platform for predicting test scores using machine learning.</p>
+        <p>Our system analyzes various factors to provide accurate predictions.</p>
+        <p>Created by Ritika Upadhyay, this website aims to assist students in understanding and predicting their exam
+            scores based on data-driven insights.</p>
+        </div>
+        {%include 'Footer.html'%}
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+{% endblock%}
