@@ -2,23 +2,24 @@ body {
     font-family: 'Arial', sans-serif;
    
     margin: 0;
-    display: flex;
+    
     align-items: center;
     justify-content: center;
-    height: 50vh;
-    background: #f8d3d3;
+    
 }
 
-.container {
-    
-    color: #000;
+.About{
+    background-color:rgba(47, 43, 43, 0.48);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 8px;
+margin: auto;
     text-align: center;
     width: 80%; 
 }
 
 h2 {
-    color: #000;
+    color: #f1dada;
 }
 

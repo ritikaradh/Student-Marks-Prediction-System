@@ -9,7 +9,7 @@ from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 application = Flask(__name__)
 
 app = application
-
+app.jinja_env.auto_reload = True
 ## Route for a home page
 
 
@@ -55,7 +55,7 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(pred_df)
 
-        return render_template("home.html", results=results[0])
+        return render_template("Result.html", results=results[0])
 
 
 if __name__ == "main":
