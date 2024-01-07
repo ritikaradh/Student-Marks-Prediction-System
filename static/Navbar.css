@@ -14,12 +14,13 @@ body{
 }
 nav{
     position: fixed;
-  
-    position:static;
+    display: flex;
+    height: 50px;
+    left: 0;
+    right: 0;
     background-color: rgb(255, 229, 229);
     box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
-   
-   
+   z-index: 99;
 
 }
 nav ul{

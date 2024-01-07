@@ -1,11 +1,14 @@
 body {
-    font-family: 'Arial', sans-serif;
-   
     margin: 0;
-    
+    font-family: 'Arial', sans-serif;
     align-items: center;
     justify-content: center;
+    height:inherit;
+    width: inherit;
     
+    background-image: url('../static/image.jpg');
+
+
 }
 
 .About{
@@ -14,7 +17,7 @@ body {
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 8px;
-margin: auto;
+    margin: auto;
     text-align: center;
     width: 80%; 
 }
