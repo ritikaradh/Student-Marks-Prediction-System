@@ -14,12 +14,12 @@ body, h1, h2, h3, p, ul, li {
       margin: 0;
      
       min-height: 100%;
-      padding-bottom: 6.75rem;
+    
       box-sizing: inherit;
     }
     .maincontainer{
         background: linear-gradient(to bottom, #88353500, #6fa1d3);
- 
+      color: #ffffff;
   text-align: center;
   position: absolute;
   right: 0;
@@ -28,6 +28,7 @@ body, h1, h2, h3, p, ul, li {
     }    
     .text-center {
         text-align: center;
+        
       }
       
       /* Social media icons */

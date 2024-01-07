@@ -5,12 +5,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
     <title>Document</title>
     
 </head>
 <body>
-    <div><h1>index page
-    </h1></div>
+    <div class="hero">
+        <div class="content">
+            <h3>Welcome to our</h3> 
+            <h1>Score Prediction Site</h1>
+            <a class="midbtn" style="text-decoration:none;color: #fff;" href="{{ url_for('home') }}">Let's Predict</a>
+        </div>
+        <div class="bubbles">
+           
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+            <img src="../static/bubble.png" alt="">
+           
+        </div>
+    
+      </div>
     {%include 'Footer.html'%}
 </body>
 </html>

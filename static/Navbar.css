@@ -4,14 +4,7 @@
     
 }
 
-body{
-    min-height:100vh ;
-    
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
 nav{
     position: fixed;
     display: flex;
@@ -28,7 +21,7 @@ nav ul{
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     text-decoration: none;
 
 }
